@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="rootPane" prefHeight="700.0" prefWidth="1100.0" styleClass="main-container" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.todoapp.HelloController">
+    <children>
+        <HBox>
+            <children>
+                <VBox maxWidth="300.0" minWidth="300.0" spacing="25.0" styleClass="sidebar">
+                    <padding>
+                        <Insets bottom="30.0" left="25.0" right="25.0" top="40.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="sidebar-title" text="Overview" />
+                        <ScrollPane fitToWidth="true" styleClass="edge-to-edge" VBox.vgrow="ALWAYS">
+                            <content>
+                                <VBox fx:id="generalTaskList" spacing="15.0" />
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </VBox>
+
+                <VBox styleClass="content-area" HBox.hgrow="ALWAYS">
+                    <children>
+                        <HBox alignment="CENTER" spacing="20.0" styleClass="date-header">
+                            <padding>
+                                <Insets bottom="25.0" top="25.0" />
+                            </padding>
+                            <children>
+                                <Button styleClass="nav-button" text="←"
+                                fx:id="leftbutton"
+                                onAction="#leftButton"/>
+                                <HBox fx:id="dateContainer" alignment="CENTER" spacing="12.0">
+                                    <children>
+                                        <Button styleClass="date-pill-active" text="31"
+                                        fx:id="button1"
+                                        onAction="#button1"/>
+                                        <Button styleClass="date-pill" text="01"
+                                        fx:id="button2"
+                                        onAction="#button2"
+                                        />
+                                        <Button styleClass="date-pill" text="02"
+                                        fx:id="button3"
+                                        onAction="#button3"
+                                        />
+                                        <Button styleClass="date-pill" text="03"
+                                        fx:id="button4"
+                                        onAction="#button4"
+                                        />
+                                        <Button styleClass="date-pill" text="04"
+                                        fx:id="button5"
+                                        onAction="#button5"
+                                        />
+                                    </children>
+                                </HBox>
+                                <Button styleClass="nav-button" text="→"
+                                fx:id="rightbutton"
+                                onAction="#rightButton"/>
+                            </children>
+                        </HBox>
+
+                        <VBox spacing="30.0" VBox.vgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="40.0" left="50.0" right="50.0" top="35.0" />
+                            </padding>
+                            <children>
+                                <HBox alignment="CENTER_LEFT">
+                                    <children>
+                                        <VBox>
+                                            <children>
+                                                <Label styleClass="section-header" text="Today's Schedule"/>
+                                                <Label styleClass="section-subtitle" text="Saturday, January 31" fx:id="dateText"/>
+                                            </children>
+                                        </VBox>
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Button styleClass="add-button" text="+ Add New Task"
+                                        fx:id="taskButton"
+                                        onAction="#tButton"
+                                        />
+                                    </children>
+                                </HBox>
+                                <ScrollPane fitToWidth="true" styleClass="edge-to-edge" VBox.vgrow="ALWAYS">
+                                    <content>
+                                        <VBox fx:id="dailyTaskList" spacing="20.0" />
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <Button onAction="#toggleTheme" styleClass="theme-fab" text="◐" StackPane.alignment="BOTTOM_RIGHT">
+            <StackPane.margin>
+                <Insets bottom="30.0" right="30.0" />
+            </StackPane.margin>
+        </Button>
+    </children>
+</StackPane>
