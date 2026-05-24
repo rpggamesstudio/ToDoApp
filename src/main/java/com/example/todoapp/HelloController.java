@@ -131,7 +131,7 @@ public class HelloController {
 
         ZonedDateTime selectedDate = dateFocus.plusDays(currentButton - 1);
 
-        // Better Date Formatting: e.g., "Saturday, Jan 31"
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, MMM d");
         dateText.setText(selectedDate.format(formatter));
 
@@ -195,7 +195,7 @@ public class HelloController {
         return miniCard;
     }
 
-    // --- Unified Popup Logic (Fixes bugs #1, #2, #3, and #4) ---
+
     private void showTaskDialog(Task taskToEdit) {
         BoxBlur blur = new BoxBlur(10, 3, 3);
         rootPane.getChildren().get(0).setEffect(blur);
@@ -229,7 +229,7 @@ public class HelloController {
         errorLabel.setTextFill(Color.RED);
         errorLabel.setVisible(false);
 
-        // Populate fields if we are editing
+
         if (taskToEdit != null) {
             actionBtn.setText("Save Changes");
             nameField.setText(taskToEdit.getTitle());
@@ -262,7 +262,7 @@ public class HelloController {
         });
 
         Button closeBtn = new Button("Cancel");
-        closeBtn.getStyleClass().add("nav-button"); // Looks cleaner than a bright button
+        closeBtn.getStyleClass().add("nav-button");
         closeBtn.setOnAction(e -> {
             rootPane.getChildren().removeAll(dimmer, popup);
             rootPane.getChildren().get(0).setEffect(null);
