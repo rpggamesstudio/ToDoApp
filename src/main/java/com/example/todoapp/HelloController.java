@@ -204,15 +204,14 @@ public class HelloController {
         dimmer.widthProperty().bind(rootPane.widthProperty());
         dimmer.heightProperty().bind(rootPane.heightProperty());
         dimmer.setFill(Color.web("#000000", 0.5));
-        dimmer.setOnMouseClicked(e -> e.consume()); // Prevents clicking background UI
+        dimmer.setOnMouseClicked(e -> e.consume()); 
 
         VBox popup = new VBox(15);
         popup.setMaxSize(320, 250);
-        popup.getStyleClass().add("popup-window"); // Uses CSS class directly
+        popup.getStyleClass().add("popup-window"); 
         popup.setAlignment(Pos.CENTER);
         popup.setPadding(new javafx.geometry.Insets(20));
 
-        // Use prompt text so the user doesn't have to backspace
         TextField nameField = new TextField();
         nameField.setPromptText("Task name");
         nameField.getStyleClass().add("custom-textfield");
