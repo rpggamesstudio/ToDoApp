@@ -15,7 +15,7 @@ public class Task {
         this.title = title;
         this.description = description;
         this.date = date;
-        this.dateString = date.toString(); // e.g., "2026-02-22"
+        this.dateString = date.toString(); 
         this.isDoneValue = false;
 
         initializeTransientFields();
